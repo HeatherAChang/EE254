@@ -1,0 +1,23 @@
+Circuit: * C:\Users\chang\OneDrive - Stanford\1st Year\EE 254\Homework 3\q3_with_leak.asc
+
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 0.01004 to 0.01004
+
+Date: Sun Oct 13 17:39:10 2024
+Total elapsed time: 61.980 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 5821221
+traniter = 5821216
+tranpoints = 2568554
+accept = 1970030
+rejected = 598525
+matrix size = 14
+fillins = 3
+solver = Normal
+Avg thread counts: 1.0/1.0/1.0/1.0
+Matrix Compiler1: 586 bytes object code size  0.2/0.2/[0.1]
+Matrix Compiler2: 958 bytes object code size  0.1/0.3/[0.1]
+

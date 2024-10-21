@@ -1,0 +1,31 @@
+* C:\Users\chang\OneDrive - Stanford\1st Year\EE 254\Homework 2\problem4_comparator_hysteresis.asc
+B1 Vsw 0 V={if(V(fb)>I(L1)-V(sin), 5, -5)}
+R1 Vsw fb 576k
+R2 N001 fb 100k
+L1 x+ N003 500µ
+V1 N003 x- SINE(0 169.71 60)
+S1 x+ N002 pwms1 0 SWIdeal
+S2 0 x+ pwms2 0 SWIdeal
+s3 x- N002 pwms3 0 SwIdeal
+S4 0 x- pwms4 0 SWIdeal
+V4 N002 0 200
+B2 pwms4 0 V={if(V(sin)>0,1,0)}
+B3 pwms3 0 V={if(V(sin)<0,1,0)}
+B4 pwms1 0 V=limit(0,V(Vsw),V(pwms4))
+B5 pwms2 0 V=limit(0,(1-V(Vsw)),V(pwms3))
+D2 x- N002 D
+D3 0 x- D
+D4 0 x+ D
+V3 sin 0 SINE(0 9.9 60)
+R§1 fb P001 100k
+V5 P001 0 -5
+V6 N001 0 5
+D1 x+ N002 D
+.model D D
+.lib C:\Users\chang\AppData\Local\LTspice\lib\cmp\standard.dio
+.tran 0 50m 0 1u uic
+.ic V(Vsw)=0
+.model D D(Ron=0)
+.model SWIdeal SW(Ron=0.1m Roff=10Meg Vt=0.1 Vh=0.1)
+.backanno
+.end
